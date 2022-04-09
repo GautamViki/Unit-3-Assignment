@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <style>
+            .mem {
+                  height: 30px;
+                  width: 130px;
+                  border: 1px solid blue;
+                  border-radius: 5px;
+                  margin: 10px;
+                  font-size: 25px;
+                  text-align: center;
+                  align-items: center;
+            }
+      </style>
+</head>
+
+<body>
+      <div id="winner" class="mem"></div>
+      <div id="member-1" class="mem"></div>
+      <div id="member-2" class="mem"></div>
+      <div id="member-3" class="mem"></div>
+      <button id="roll">ROLL THE DICE</button>
+</body>
+
+</html>
+<script>
+      document.querySelector("#roll").addEventListener("click", findWinner);
+      function findWinner() {
+            var val1 = document.getElementById("member-1");
+            val1.value = Math.floor(Math.random() * 6 + 1);
+            var mem1 = val1.value;
+            val1.innerText = mem1;
+
+            var val2 = document.getElementById("member-2");
+            val2.value = Math.floor(Math.random() * 6 + 1);
+            var mem2 = val2.value;
+            val2.innerText = mem2;
+
+            var val3 = document.getElementById("member-3");
+            val3.value = Math.floor(Math.random() * 6 + 1);
+            var mem3 = val3.value;
+            val3.innerText = mem3;
+
+            var winner = document.getElementById("winner");
+
+            if(mem1>mem2 && mem1>mem3){
+                  val1.style.backgroundColor="green";
+                  winner.innerText=mem1;
+                  if(mem2>mem3){
+                        val2.style.backgroundColor="yellow";
+                        val3.style.backgroundColor="red";
+                  }
+                  else if(mem3>mem2){
+                        val3.style.backgroundColor="yellow";
+                        val2.style.backgroundColor="red";
+                  }
+                  else{
+                        val3.style.backgroundColor="blue";
+                        val2.style.backgroundColor="blue";
+                  }
+            }
+            else if(mem2>mem1 && mem2>mem3){
+                  val2.style.backgroundColor="green";
+                  winner.innerText=mem2;
+                  if(mem1>mem3){
+                        val1.style.backgroundColor="yellow";
+                        val3.style.backgroundColor="red";
+                  }
+                  else if(mem3>mem1){
+                        val3.style.backgroundColor="yellow";
+                        val1.style.backgroundColor="red";
+                  }
+                  else{
+                        val3.style.backgroundColor="blue";
+                        val1.style.backgroundColor="blue";
+                  }
+            }
+            else if(mem3>mem1 && mem2<mem3){
+                  val3.style.backgroundColor="green";
+                  winner.innerText=mem3;
+                  if(mem1>mem2){
+                        val1.style.backgroundColor="yellow";
+                        val2.style.backgroundColor="red";
+                  }
+                  else if(mem2>mem1){
+                        val2.style.backgroundColor="yellow";
+                        val1.style.backgroundColor="red";
+                  }
+                  else{
+                        val2.style.backgroundColor="blue";
+                        val1.style.backgroundColor="blue";
+                  }
+            }
+            else if(mem1==mem2 && mem1>mem3){
+                  winner.innerText="";
+                  val2.style.backgroundColor="blue";
+                  val1.style.backgroundColor="blue";
+                  val3.style.backgroundColor="red";
+            }
+            else if(mem3==mem2 && mem1<mem3){
+                  winner.innerText="";
+                  val2.style.backgroundColor="blue";
+                  val3.style.backgroundColor="blue";
+                  val1.style.backgroundColor="red";
+            }
+            else if(mem3==mem1 && mem2<mem3){
+                  winner.innerText="";
+                  val1.style.backgroundColor="blue";
+                  val3.style.backgroundColor="blue";
+                  val2.style.backgroundColor="red";
+            }   
+      }
+      
+</script>
