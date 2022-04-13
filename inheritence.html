@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let carModel={
+    wheel:4,
+    stearing:true,
+    fuel:"oil",
+    type_of_Engine:"vehicleEngine",
+    gearbox:"vehicleTransmission",
+}
+
+let hundai=Object.create(carModel);
+console.log(hundai);
+
+function car(w,s,o,g,e){
+    this.wheel=w;
+    this.stearing=s;
+    this.fuel=o;
+    this.gearbox=g;
+    this.type_of_Engine=e;
+}
+let audi=new car(4,true,"deisel","transmission","vehicleEngine");
+console.log(audi);
+</script>

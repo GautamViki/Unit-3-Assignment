@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let arr = new Array(1, 2, 3, 4);
+    // console.log(arr);
+
+    let arr2 = new myArray(1, 2, 3, 4, 5, 6);
+
+    function myArray() {
+        Object.defineProperty(this, 'length', {
+            value: 0,
+            writable: true,
+            enumerable: false
+        });
+
+        this.length = arguments.length;
+        for (let i = 0; i < this.length; i++) {
+            this[i] = arguments[i];
+        }
+    }
+
+    myArray.prototype.Add = function (value) {
+        let idx = this.length;
+        this[idx] = value;
+        this.length++;
+    }
+
+    arr2.Add("x");
+
+    myArray.prototype.Remove = function () {
+        let idx = this.length - 1;
+        delete this[idx];
+        this.length--;
+    }
+
+    arr2.Remove();
+    arr2.Remove();
+
+    myArray.prototype.top = function () {
+        let idx = this.length - 1;
+        console.log(this[idx]);
+    }
+    arr2.top();
+
+    myArray.prototype.print = function () {
+        let res = [];
+        for (let i = 0; i < this.length; i++) {
+            res[i] = this[i];
+        }
+        console.log(res);
+    }
+    arr2.print();
+
+    myArray.prototype.printReverse = function () {
+        let i = 0;
+        let j = this.length - 1;
+        let res = [];
+        while (j >= 0) {
+            res[i] = this[j];
+            i++;
+            j--;
+        }
+        console.log(res);
+    }
+    arr2.printReverse();
+
+    myArray.prototype.size=function(){
+        let idx=this.length;
+        console.log(idx);
+    }
+    arr2.Add("a");
+    arr2.size();
+    arr2.printReverse();
+    arr2.top()
+// console.log(Object.values(arr2));
+</script>

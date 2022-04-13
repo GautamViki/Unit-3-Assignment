@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container {
+            width: 90%;
+            /* border: 1px solid red; */
+            /* height: 400px; */
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        button>a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button><a href="/index.html">add product</a></button>
+    
+    <div id="container">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var productData = JSON.parse(localStorage.getItem("Products"));
+    console.log(productData);
+    window.addEventListener("load", function () {
+        displayProduct(productData);
+    });
+    function displayProduct() {
+        document.querySelector("#container").innerText = "";
+        productData.map(function (el, idx) {
+            let box = document.createElement("div");
+            box.style.padding = '20px'
+
+            let img = document.createElement("img");
+            img.src = el.image;
+            img.style.width = "150px";
+            img.style.marginBottom = "-20px"
+
+            let name = document.createElement("p");
+            name.innerText = el.name;
+            name.style.fontSize = "20px";
+
+            let price = document.createElement("p");
+            price.innerText = el.price;
+
+            let btnRemove = document.createElement("button");
+            btnRemove.innerText = "remove";
+            btnRemove.addEventListener("click", function () {
+                removeProduct(el, idx);
+            })
+
+            let soldPro = document.createElement("button");
+            soldPro.innerText = "sold"
+
+
+            box.append(img, name, price, btnRemove, soldPro);
+            document.querySelector("#container").append(box)
+        });
+    }
+    function removeProduct(el, idx) {
+        productData.splice(idx, 1);
+        // console.log(productData,"**************");
+        localStorage.setItem("Products",JSON.stringify(productData));
+        window.location.reload();
+    }
+</script>
