@@ -1,0 +1,28 @@
+#signup-form-div {
+    /* border: 1px solid blue; */
+    margin: auto;
+    width: 28%;
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    border-radius: 8px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    /* font-size: 20px; */
+  }
+  #signup-form-div>form>#email,#pass,#name,#mobile{
+      font-size: 18px;
+      padding: 6px;
+      width: 60%;
+  }
+  #signup-form-div>form> #submit{
+      width: 40%;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      padding: 7px;
+      background-color: #008080;
+      color: white;
+  }
+  

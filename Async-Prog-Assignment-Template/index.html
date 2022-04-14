@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      #nave {
+        height: 50px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: right;
+        gap: 40px;
+        padding-right: 30px;
+        text-align: center;
+        align-items: center;
+        /* font-family: "dana VF"; */
+      }
+      #nave div > a {
+        text-decoration: none;
+        color: black;
+        /* font-size: 25px; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="nave">
+      <div><a href="/index.html">Home</a></div>
+      <div>
+        <a href="/signup.html">Sign up</a>
+      </div>
+      <div><a href="login.html">Login</a></div>
+    </div>
+    <div></div>
+    <br />
+    <input type="url" id="img" placeholder="paste url" />
+    <button onclick="sendUrl()">send Image</button>
+    <br /><br />
+    <div id="slideshow">
+      <!--Show Slideshow here-->
+    </div>
+
+    <div id="sort-buttons">
+      <!--Add sorting here-->
+    </div>
+    <div id="movies">
+      <!--Show list of movies here-->
+    </div>
+  </body>
+</html>
+<script src="/scripts/index.js"></script>
+<script>
+  let imageArr = JSON.parse(localStorage.getItem("ImageUrl")) || [];
+  function sendUrl() {
+    let url = document.getElementById("img").value;
+
+    imageArr.push(url);
+    // console.log(imageArr)
+    localStorage.setItem("ImageUrl", JSON.stringify(imageArr));
+
+    document.getElementById("img").value = null;
+  }
+</script>

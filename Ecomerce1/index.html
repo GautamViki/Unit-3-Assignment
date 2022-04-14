@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        #show>a {
-            text-decoration: none;
-            color: black;
-        }
+      #show > a {
+        text-decoration: none;
+        color: black;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <button id="show"><a href="/product.html">show product</a></button><br><br>
+  <body>
+    <button id="show"><a href="/Ecomerce1/product.html">show product</a></button
+    ><br /><br />
     <form onsubmit="addProducts(event)" id="prod">
-        <label for="">Product Name</label>
-        <input type="text" placeholder="Product Name" id="name"><br><br>
-        <label for="">Product Category</label>
-        <input type="text" placeholder="Category" id="category"><br><br>
-        <label for="">Product Image</label>
-        <input type="text" placeholder="image url" id="image"><br><br>
-        <label for="">Product price</label>
-        <input type="text" placeholder="price" id="price"><br><br>
-        <label for="">Gender</label>
-        <select name="" id="gender">
-            <option value="">select</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select><br><br>
-        <label for="">Status</label>
-        <select name="" id="sold">
-            <option value="false">false</option>
-            <option value="true">true</option>
-        </select><br><br>
-        <input type="submit" id="add">
+      <label for="">Product Name</label>
+      <input type="text" placeholder="Product Name" id="name" /><br /><br />
+      <label for="">Product Category</label>
+      <input type="text" placeholder="Category" id="category" /><br /><br />
+      <label for="">Product Image</label>
+      <input type="text" placeholder="image url" id="image" /><br /><br />
+      <label for="">Product price</label>
+      <input type="text" placeholder="price" id="price" /><br /><br />
+      <label for="">Gender</label>
+      <select name="" id="gender">
+        <option value="">select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option></select
+      ><br /><br />
+      <label for="">Status</label>
+      <select name="" id="sold">
+        <option value="false">false</option>
+        <option value="true">true</option></select
+      ><br /><br />
+      <input type="submit" id="add" />
     </form>
-</body>
-
+  </body>
 </html>
 <script>
-    var productArr = [];
-    function addProducts(event) {
-        event.preventDefault();
-        // console.log("dbhjadgjdhfjdg");
-        let form = document.querySelector("#prod");
-        let proName = form.name.value;
-        let category = form.category.value;
-        let image = form.image.value;
-        let price = form.price.value;
-        let gender = form.gender.value;
-        let status = form.sold.value;
-        // console.log(proName, category, image, price, gender, status);
+  var productArr = [];
+  function addProducts(event) {
+    event.preventDefault();
+    // console.log("dbhjadgjdhfjdg");
+    let form = document.querySelector("#prod");
+    let proName = form.name.value;
+    let category = form.category.value;
+    let image = form.image.value;
+    let price = form.price.value;
+    let gender = form.gender.value;
+    let status = form.sold.value;
+    // console.log(proName, category, image, price, gender, status);
 
-        let pro1 = new addProductsObject(proName, category, image, price, gender, status);
-        productArr.push(pro1);
-        localStorage.setItem("Products", JSON.stringify(productArr));
-        console.log(productArr);
-    }
+    let pro1 = new addProductsObject(
+      proName,
+      category,
+      image,
+      price,
+      gender,
+      status
+    );
+    productArr.push(pro1);
+    localStorage.setItem("Products", JSON.stringify(productArr));
+    console.log(productArr);
+  }
 
-    function addProductsObject(n, c, i, p, g, s) {
-        this.name = n;
-        this.category = c;
-        this.image = i;
-        this.price = p;
-        this.gender = g;
-        this.sold = s;
-    }
-    // localStorage.setItem("Products",JSON.stringify(productArr));
+  function addProductsObject(n, c, i, p, g, s) {
+    this.name = n;
+    this.category = c;
+    this.image = i;
+    this.price = p;
+    this.gender = g;
+    this.sold = s;
+  }
+  // localStorage.setItem("Products",JSON.stringify(productArr));
 </script>
