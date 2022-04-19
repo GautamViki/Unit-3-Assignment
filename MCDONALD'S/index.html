@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display{
+            width: auto;
+            margin: auto;
+            margin-top: -50px;
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="dish">
+        <option value="">Select Dish</option>
+        <option value="Briyani">Briyani</option>
+        <option value="Samosa">Samosa</option>
+        <option value="Coffee">Coffee</option>
+        <option value="Maggi">Maggi</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Sandwich">Sandwich</option>
+        <option value="Burger">Burger</option>
+    </select>
+    <button onclick="orderNow()">orderNow</button>
+    <h3>Your order list</h3>
+<h2>Your Order Ready</h2>
+    <div id="display">
+        
+    </div>
+</body>
+</html>
+<script src="/index.js"></script>
+<script>
+let arr=
+[
+  {
+    "imgURL": "https://www.cubesnjuliennes.com/wp-content/uploads/2020/08/Best-Mutton-Keema-Samosa-Recipe-1.jpg",
+    "name": "Samosa"
+  },
+  {
+    "imgURL": "https://www.licious.in/blog/wp-content/uploads/2020/12/Hyderabadi-chicken-Biryani.jpg",
+    "name": "Briyani "
+  },
+  {
+    "imgURL": "https://im.rediff.com/getahead/2020/sep/29burnt-garlic-chilli-maggi.jpg",
+    "name": "Maggi "
+  },
+  {
+    "imgURL": "https://images.pexels.com/photos/2910874/pexels-photo-2910874.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "name": "Coffee "
+  },
+  {
+    "imgURL": "https://img-global.cpcdn.com/recipes/7e6737e519a3e27b/400x400cq70/photo.jpg",
+    "name": "Tea "
+  },
+  {
+    "imgURL": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F44%2F2022%2F03%2F01%2Fcucumber-sandwich.jpg&q=60",
+    "name": "Sandwich "
+  },
+  {
+    "imgURL": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/lassi.jpg",
+    "name": "Lassi "
+  },
+  {
+    "imgURL": "https://imgmedia.lbb.in/media/2019/01/5c2f84d1d5b20859433ee25e_1546618065799.jpg",
+    "name": "Pizza "
+  },
+  {
+    "imgURL": "https://www.nestle-family.com/sites/site.prod1.nestle-family.com/files/2019-11/15951---Vegetable-Spring-Rolls.jpg",
+    "name": "Rolls "
+  },
+  {
+    "imgURL": "https://www.thespruceeats.com/thmb/l4w6PvMqsz1EjueCAh_foPmYafM=/3456x3456/smart/filters:no_upscale()/garlic-burger-patties-333503-hero-01-e4df660ff27b4e5194fdff6d703a4f83.jpg",
+    "name": "Burger"
+  }
+]
+</script> 

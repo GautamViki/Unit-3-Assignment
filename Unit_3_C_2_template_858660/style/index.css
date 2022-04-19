@@ -1,0 +1,29 @@
+#navbar {
+    display: flex;
+    justify-content: right;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  #navbar div>a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+  }
+
+  #items{
+      width: 90%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(5,1fr);
+      gap: 30px;
+      margin-top: 40px;
+      /* justify-content: space-evenly; */
+  }
+  #add_to_cart{
+      border: none;
+      background-color: rgb(37, 2, 83);
+      font-size: 16px;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+  }

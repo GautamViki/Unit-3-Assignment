@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #query {
+        width: 200px;
+      }
+      #movies {
+        border: 1px solid black;
+        height: 200px;
+        width: 206px;
+        border-top: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hotstar</h1>
+    <input oninput="searchMovies()" type="text" id="query" />
+    <div id="movies"></div>
+  </body>
+</html>
+<script>
+  let movie = document.getElementById("movies");
+  async function searchMovies() {
+    // url=`https://www.omdbapi.com/?t=${name}&apikey=41c2a909`;
+
+    try {
+      const query = document.getElementById("query").value;
+      let res = await fetch(
+        `https://www.omdbapi.com/?s=${query}&apikey=41c2a909`
+      );
+
+      const data = await res.json();
+      console.log("data", data);
+      appendMovies(data.Search);
+    } catch (err) {
+      console.log("err", err);
+    }
+  }
+
+  function appendMovies(data) {
+    if (data === undefined) {
+      return false;
+    }
+    data.forEach(function (el) {
+      let p = document.createElement("p");
+      p.innerText = el.Title;
+      movie.append(p);
+    });
+  }
+
+  async function main() {
+    let data = await searchMovies();
+    console.log(data);
+  }
+</script>

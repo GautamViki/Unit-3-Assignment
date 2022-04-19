@@ -1,0 +1,32 @@
+#container{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+body{
+    background-color: #191919;
+}
+#search{
+    text-align: center;
+    margin-top: 30px;
+}
+#name{
+    width: 35%;
+    font-size: 18px;
+    padding: 14px 20px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+}
+#btn{
+    width: 7%;
+    font-size: 18px;
+    padding: 14px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -5px;
+    background-color: #0046c3;
+    color: white;
+}

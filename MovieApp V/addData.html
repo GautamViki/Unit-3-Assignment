@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #form {
+        width: 20%;
+        margin: auto;
+        /* border: 1px solid red; */
+        padding: 50px 30px;
+        /* align-items: center; */
+        margin-top: 50px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+          rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+      }
+      #form #name,
+      #url,
+      #date,
+      #rating {
+        width: 80%;
+        font-size: 16px;
+        padding: 6px;
+      }
+      button > a {
+        text-decoration: none;
+        color: black;
+      }
+      #submit {
+        width: 40%;
+        font-size: 15px;
+        padding: 6px;
+        background-color: #008080;
+        border: none;
+        border-radius: 4px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button><a href="/index.html">Home</a></button>
+    <div id="form">
+      <form>
+        <input type="text" id="url" placeholder="image url" /><br /><br />
+        <input type="text" id="name" placeholder="movie name" /><br /><br />
+        <input type="text" id="date" placeholder="release date" /><br /><br />
+        <input type="text" id="rating" placeholder="IMDB rating" /><br /><br />
+        <input type="submit" id="submit" />
+      </form>
+    </div>
+  </body>
+</html>
+<script>
+  {
+    document.querySelector("form").addEventListener("submit", sendDataFun);
+
+    let movieDataArr = JSON.parse(localStorage.getItem("movies")) || [];
+
+    function sendDataFun() {
+      event.preventDefault();
+      let form = document.querySelector("form");
+      let name = form.name.value;
+      let imgURL = form.url.value;
+      let rating = form.rating.value;
+      let date = form.date.value;
+
+      // console.log(name,imgURL,rating,date)
+      let movieObj = new movie(name, imgURL, rating, date);
+
+      movieDataArr.push(movieObj);
+      // console.log(movieDataArr);
+      localStorage.setItem("movies", JSON.stringify(movieDataArr));
+      form.name.value = null;
+      form.url.value = null;
+      form.rating.value = null;
+      form.date.value = null;
+    }
+
+    function movie(name, imgURL, rating, date) {
+      this.name = name;
+      this.imgURL = imgURL;
+      this.rating = rating;
+      this.date = date;
+    }
+  }
+</script>
