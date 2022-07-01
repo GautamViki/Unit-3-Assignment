@@ -1,0 +1,127 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #121926;
+}
+#nave {
+  height: 75px;
+  /* border: 1px solid green; */
+  background-color: #121926;
+  margin: -8px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+#left-nave {
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 4%;
+  text-align: center;
+  align-content: center;
+  padding-left: 4%;
+  /* border: 1px solid honeydew; */
+}
+#left-nave > a > img {
+  /* border: 1px solid blue; */
+  /* width: 50px; */
+  height: 38px;
+  padding-top: 12px;
+}
+#left-nave > p > i {
+  color: rgb(236, 233, 233);
+  font-size: 20px;
+  /* border: 1px solid red;  */
+}
+#left-nave > p {
+  color: rgb(236, 233, 233);
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 12px;
+  cursor: pointer;
+}
+#left-nave #kids {
+  color: #ffaa05;
+  font-family: "Patrick Hand", cursive;
+  font-size: 22px;
+  font-weight: 800;
+}
+#right-nave {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  text-align: center;
+  align-items: baseline;
+  gap: 4%;
+  padding-right: 5%;
+}
+#search {
+  font-size: 17px;
+  /* position: absolute; */
+  width: 35%;
+  border: none;
+  padding: 8px 0px;
+  color: white;
+  background: #121926;
+  border: none;
+  margin-left: 10%;
+  position: relative;
+  border-bottom: 1px solid rgb(141, 137, 137);
+}
+
+#search + button {
+  font-size: 16px;
+  /* position: relative; */
+  border: none;
+  padding: 8px;
+  color: rgb(141, 137, 137);
+  font-weight: lighter;
+  background-color: #121926;
+  /* border: 1px solid yellow; */
+  margin-left: -4%;
+}
+
+::placeholder {
+  color: rgb(236, 233, 233);
+}
+#subscribe {
+  background-color: #1f80e0;
+  border: none;
+  font-size: 12px;
+  color: white;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 3px;
+  /* margin-bottom: 28px; */
+}
+#right-nave > p > a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+}
+#show-movie{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 340px;
+  position: absolute;
+  margin-top: 60px;
+  margin-right: 70px;
+  gap: 20px;
+  padding: 10px;
+}
+
+#trending{
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+  width: 90%;
+  /* justify-content: space-evenly; */
+  margin: auto;
+  margin-top:40px ;
+grid-gap:4% 2%;
+/* grid-area: 3%; */
+  color: white;
+  padding-bottom: 30px;
+  /* border: 1px solid yellow; */
+}
